@@ -38,8 +38,13 @@ Quadrant(1,-1)
 
 console.log("EXERCISE 4:\n==========\n");
 function whatTriangle(side1,side2,side3){
-    if (side1 == side2 == side3) console.log("This is a equilateral");
-    else if (side1 == side2 || side2 == side3 || side1 == side3)console.log("This is a isosceles");
-    else console.log("This is a scalene");
+    let isValid = false
+    if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1) isValid = true;
+    if (isValid){
+        if (side1 == side2 == side3) console.log("This is a equilateral");
+        else if (side1 == side2 || side2 == side3 || side1 == side3)console.log("This is a isosceles");
+        else console.log("This is a scalene");
+    }
+    else console.log("not a valid triangel");
 }
 whatTriangle(2,3,1);
